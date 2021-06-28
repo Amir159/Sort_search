@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter array size: ");
         int[] arr = new int[getNumber()];
-        initArray(arr);
+        initArr(arr);
         printArr(arr);
         System.out.print("Enter number to find: ");
         int numberToFind = getNumber();
@@ -19,9 +19,9 @@ public class Main {
         return in.nextInt();
     }
 
-    private static void initArray(int[] arr) {
+    private static void initArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 1000);
+            arr[i] = (int) (Math.random() * arr.length * 10);
         }
     }
 
@@ -30,8 +30,7 @@ public class Main {
         for (int i = 0; i < arr.length; ++i) {
             if (i < arr.length - 1) {
                 System.out.print(arr[i] + ", ");
-            }
-            else {
+            } else {
                 System.out.print(arr[i]);
 
             }
