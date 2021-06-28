@@ -1,19 +1,18 @@
 package com.syncretis;
 
-public class SearchBinary implements Search{
+public class SearchBinary implements Search {
     public int search(int[] arr, int numberToSearch) {
-        boolean flag = false;
-        int leftPos = 0, rightPos = arr.length, countBinary = 0 , currentSize = arr.length;
+        int leftPos = 0, rightPos = arr.length, currentSize;
         do {
-            currentSize = Math.abs(rightPos + leftPos);
-            if (arr[currentSize / 2] > numberToSearch) {
-                rightPos = currentSize / 2;
-            } else if (arr[currentSize / 2] < numberToSearch) {
-                leftPos = currentSize / 2;
+            currentSize = Math.abs((rightPos + leftPos) / 2);
+            if (arr[currentSize] > numberToSearch) {
+                rightPos = currentSize;
+            } else if (arr[currentSize] < numberToSearch) {
+                leftPos = currentSize;
             } else {
-                return currentSize / 2;
+                return currentSize;
             }
-        } while (currentSize / 2 != 0 && currentSize / 2 != arr.length - 1);
+        } while (currentSize != 0 && currentSize != arr.length - 1);
         return -1;
     }
 }
