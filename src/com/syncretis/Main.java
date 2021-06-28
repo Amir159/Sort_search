@@ -39,22 +39,22 @@ public class Main {
         int sortType = in.nextInt();
         switch (sortType) {
             case 1:
-                System.out.println("Bubble sort.");
                 Sort bubble = new SortBubble();
+                System.out.println("Bubble sort.");
                 bubble.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 2:
-                System.out.println("Selection sort.");
                 Sort selection = new SortSelection();
+                System.out.println("Selection sort.");
                 selection.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 3:
-                System.out.println("Quick sort.");
                 Sort quick = new SortQuick();
+                System.out.println("Quick sort.");
                 quick.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
@@ -69,13 +69,13 @@ public class Main {
 
         switch (searchType) {
             case 1:
-                System.out.println("Linear search.");
                 Search linear = new SearchLinear();
+                System.out.println("Linear search.");
                 System.out.println("Position of searching number is " + linear.search(arr, numberToFind));
                 break;
             case 2:
-                System.out.println("Binary.");
                 Search binary = new SearchBinary();
+                System.out.println("Binary.");
                 System.out.println("Position of searching number is " + binary.search(arr, numberToFind));
                 break;
         }
