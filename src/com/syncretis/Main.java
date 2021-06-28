@@ -28,7 +28,7 @@ public class Main {
     private static void printArr(int[] arr) {
         System.out.print("Array: ");
         for (int it : arr) {
-            System.out.print(it + " ");
+            System.out.print(it + ", ");
         }
         System.out.println();
     }
