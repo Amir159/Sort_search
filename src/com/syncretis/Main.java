@@ -45,21 +45,21 @@ public class Main {
         switch (sortType) {
             case 1:
                 Sort bubble = new SortBubble();
-                System.out.println("Bubble sort.");
+                System.out.print("Bubble sorted ");
                 bubble.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 2:
                 Sort selection = new SortSelection();
-                System.out.println("Selection sort.");
+                System.out.print("Selection sorted ");
                 selection.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 3:
                 Sort quick = new SortQuick();
-                System.out.println("Quick sort.");
+                System.out.print("Quick sorted");
                 quick.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
@@ -75,12 +75,12 @@ public class Main {
         switch (searchType) {
             case 1:
                 Search linear = new SearchLinear();
-                System.out.println("Linear search.");
+                System.out.println("Linear search...");
                 System.out.println("Position of searching number is " + linear.search(arr, numberToFind));
                 break;
             case 2:
                 Search binary = new SearchBinary();
-                System.out.println("Binary.");
+                System.out.println("Binary search...");
                 System.out.println("Position of searching number is " + binary.search(arr, numberToFind));
                 break;
         }
