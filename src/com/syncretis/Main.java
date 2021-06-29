@@ -75,12 +75,10 @@ public class Main {
         switch (searchType) {
             case 1:
                 Search linear = new SearchLinear();
-                System.out.println("Linear search...");
                 System.out.println("Position of searching number is " + linear.search(arr, numberToFind));
                 break;
             case 2:
                 Search binary = new SearchBinary();
-                System.out.println("Binary search...");
                 System.out.println("Position of searching number is " + binary.search(arr, numberToFind));
                 break;
         }
