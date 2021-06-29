@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.print("Enter array size: ");
         int[] arr = new int[getNumber()];
-        initArray(arr);
+        initArr(arr);
         printArr(arr);
         System.out.print("Enter number to find: ");
         int numberToFind = getNumber();
@@ -19,17 +19,20 @@ public class Main {
         return in.nextInt();
     }
 
-    private static void initArray(int[] arr) {
+    private static void initArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 1000);
+            arr[i] = (int) (Math.random() * arr.length * 10);
         }
     }
 
     private static void printArr(int[] arr) {
         System.out.print("Array: ");
-        for (int it : arr) {
-            System.out.print(it + ", ");
-        }
+        for (int i = 0; i < arr.length; ++i) {
+            if (i < arr.length - 1) {
+                System.out.print(arr[i] + ", ");
+            } else {
+                System.out.print(arr[i]);
+            }       
         System.out.println();
     }
 
@@ -39,22 +42,22 @@ public class Main {
         int sortType = in.nextInt();
         switch (sortType) {
             case 1:
-                System.out.println("Bubble sort.");
                 Sort bubble = new SortBubble();
+                System.out.print("Bubble sorted ");
                 bubble.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 2:
-                System.out.println("Selection sort.");
                 Sort selection = new SortSelection();
+                System.out.print("Selection sorted ");
                 selection.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
                 break;
             case 3:
-                System.out.println("Quick sort.");
                 Sort quick = new SortQuick();
+                System.out.print("Quick sorted");
                 quick.sort(arr);
                 printArr(arr);
                 selectSearch(arr, numberToFind);
@@ -69,12 +72,10 @@ public class Main {
 
         switch (searchType) {
             case 1:
-                System.out.println("Linear search.");
                 Search linear = new SearchLinear();
                 System.out.println("Position of searching number is " + linear.search(arr, numberToFind));
                 break;
             case 2:
-                System.out.println("Binary.");
                 Search binary = new SearchBinary();
                 System.out.println("Position of searching number is " + binary.search(arr, numberToFind));
                 break;
